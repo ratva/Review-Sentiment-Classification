@@ -12,6 +12,8 @@ def load_data(x_data, y_data):
     # print(type(x_df))
     # print(type(y_df))
     # Print out the first five rows and last five rows
+    website_list = x_df['website_name'].values.tolist()
     text_list = x_df['text'].values.tolist()
+    rating_list = y_df['is_positive_sentiment'].values.tolist()
     # print(text_list)
-    return text_list
+    return website_list, text_list, rating_list
