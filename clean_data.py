@@ -23,8 +23,8 @@ def tokenize_text(text_list):
     return token_list
 
 
-# building a fixed-size vocabulary:
-def create_dictionary(tokens):
+# building a fixed-size vocabulary list with count:
+def create_word_list(tokens):
     word_count_dict = dict()
 
     for word in tokens:
@@ -34,5 +34,24 @@ def create_dictionary(tokens):
             else:
                 word_count_dict[word] = 1
                 
+
+    #sorted_tokens = list(sorted(word_count_dict, key=word_count_dict.get, reverse=True))       #TEST CODE
     return word_count_dict
 
+   
+
+#Creates vectorized version of review. 
+def make_feature_vector(review, token_list):
+    #Creates vocab term to integer defining its order in vocab.
+    vocab_dict = dict()
+    for vocab_id, tok in enumerate(token_list):
+        vocab_dict[tok] = vocab_id
+
+    #Produce feature vector from review and dictionary
+    V = len(vocab_dict.keys())  
+    count_V = np.zeros(V)
+    for word in tokenize_text(review):
+        if word in vocab_dict:
+            vv = vocab_dict[word]
+            count_V[vv] += 1
+    return count_V
