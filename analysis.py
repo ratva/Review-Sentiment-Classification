@@ -28,11 +28,13 @@ def cross_validation(x_NF, y_N, n_folds):
 
 ############### Cleaning USING SKLEAN FUNCTIONS #####################
 def clean_words(web_list, reviews_list, stars_list, n_folds):
+    #change min_df and max_df later.
     bow_classifier = sklearn.pipeline.Pipeline([
         ('bow feature extractor', CountVectorizer(ngram_range=(1,1), min_df=1, max_df=1.0, binary=False)),
         ('classifying', sklearn.linear_model.LogisticRegression())
         ('cross validating', sklearn.model_selection.RepeatedKFold(n_splits = n_folds, n_repeats = 1, random_state = 1))
         ])
+    
     
     x_N = vectorizer.fit_transform(reviews_list)
     vectorizer.transform()
