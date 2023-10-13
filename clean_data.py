@@ -1,13 +1,13 @@
 import numpy as np
 import pandas as pd
 import os
-import nltk
+# import nltk
 
-from nltk import word_tokenize
-from nltk.corpus import stopwords
+# from nltk import word_tokenize
+# from nltk.corpus import stopwords
 
-nltk.download('punkt')
-nltk.download('stopwords')
+# nltk.download('punkt')
+# nltk.download('stopwords')
 
 def tokenize_text(text_list):
     # Separate text at each space
@@ -40,15 +40,17 @@ def create_word_list(tokens):
     
     return word_count_dict
 
-   
-
-#Creates vectorized version of review. 
-def make_feature_vector(review, token_list):
+#Finally makes dictionary for modeling.
+def create_dict(token_list):
     #Creates vocab term to integer defining its order in vocab.
     vocab_dict = dict()
     for vocab_id, tok in enumerate(token_list):
         vocab_dict[tok] = vocab_id
+    return vocab_dict
 
+
+#Creates vectorized version of review. 
+def make_feature_vector(review, vocab_dict):
     #Produce feature vector from review and dictionary
     V = len(vocab_dict.keys())  
     count_V = np.zeros(V)
