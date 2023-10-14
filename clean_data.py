@@ -11,7 +11,7 @@ import os
 
 def tokenize_text(text_list):
     # Separate text at each space
-    token_list = list() #List of 2400 elements, each element is 1 review
+    token_list = list() 
     for reviewIdx in range(len(text_list)): # 0 to 2399
         cur_token = text_list[reviewIdx].split() # cur_token is 1 review
         # Remove punction
@@ -22,7 +22,7 @@ def tokenize_text(text_list):
                 # Replace the cleaned token in the original list
             token_list.append(clean_token)  # Append cleaned words to one master list
     #print('in clean data', token_list)
-    return token_list
+    return token_list #List of 2400 elements, each element is 1 review
 
 
 # building a fixed-size vocabulary list with count:
