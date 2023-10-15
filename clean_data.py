@@ -35,8 +35,6 @@ def create_word_list(tokens):
                 word_count_dict[word] += 1
             else:
                 word_count_dict[word] = 1
-                
-   # sorted_tokens = list(sorted(word_count_dict, key=word_count_dict.get, reverse=True))       #TEST CODE
     
     return word_count_dict
 
