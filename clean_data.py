@@ -25,7 +25,23 @@ def tokenize_text(text_list):
     return token_list #List of 2400 elements, each element is 1 review
 
 
-# building a fixed-size vocabulary list with count:
+def tokenize(text_list):
+    # Separate text at each space
+    token_list = list() 
+    
+    cur_token = text_list.split() # cur_token is 1 review
+    # Remove punction
+    for word in cur_token: # word contains 1 word of current review at a time
+        for punc in ['...','?', '!', '_', '.', ',', '"', '/']:
+            word = word.replace(punc, '')
+        clean_token = word.lower() #Turn to lower case
+            # Replace the cleaned token in the original list
+        token_list.append(clean_token)  # Append cleaned words to one master list
+    #print('in clean data', token_list)
+    return token_list #List of 2400 elements, each element is 1 review
+
+
+# building a fixed-size dictionary with words and count:
 def create_word_list(tokens):
     word_count_dict = dict()
 
@@ -52,7 +68,9 @@ def make_feature_vector(review, vocab_dict):
     #Produce feature vector from review and dictionary
     V = len(vocab_dict.keys())  
     count_V = np.zeros(V)
-    for word in tokenize_text(review):
+    print(review)
+    for word in tokenize(review):
+        #print(word)
         if word in vocab_dict:
             vv = vocab_dict[word]
             count_V[vv] += 1
