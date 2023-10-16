@@ -6,4 +6,8 @@ Look into sklearn BoW tools
 
 L2 penalties (C equiv to alpha )
 
+https://www.nltk.org/book_1ed/ch05.html - 
+>>> text = nltk.word_tokenize("And now for something completely different")
+>>> nltk.pos_tag(text)
 
+Categorise words as noun, preposition, adverb etc.
