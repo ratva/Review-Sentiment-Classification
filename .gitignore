@@ -8,3 +8,7 @@ q2.txt
 q2_1ngram.txt
 q2_2ngram.txt
 q2_3ngram.txt
+
+afterCountVectorizer.txt
+wordFreq.txt
+yhat.txt
