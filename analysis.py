@@ -1,4 +1,5 @@
 import numpy as np
+
 import sklearn.linear_model as sklm
 import sklearn.pipeline
 import sklearn.model_selection as skms
@@ -12,6 +13,7 @@ from scipy.stats import uniform
 
 def binary_class():
     classifier = sklm.
+
 
 #Use at least 3 folds, searching over at least 5 possible hyperparameter configurations to avoid overfitting.
 def cross_validation(x_NF, y_N, n_folds):
@@ -65,3 +67,4 @@ def cross_validation(x_NF, y_N, n_folds):
 # clf = skms.RandomizedSearchCV(logistic, distributions, random_state=0)
 # search = clf.fit(iris.data, iris.target)
 # search.best_params_
+

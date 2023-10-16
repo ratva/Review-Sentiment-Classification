@@ -40,7 +40,6 @@ def tokenize(text_list):
     #print('in clean data', token_list)
     return token_list #List of 2400 elements, each element is 1 review
 
-
 # building a fixed-size dictionary with words and count:
 def create_word_list(tokens):
     word_count_dict = dict()
@@ -51,7 +50,6 @@ def create_word_list(tokens):
                 word_count_dict[word] += 1
             else:
                 word_count_dict[word] = 1
-
     return word_count_dict
 
 #Finally makes dictionary for modeling.
