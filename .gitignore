@@ -1,3 +1,7 @@
+__pycache__/
+*.py[cod]
+*$py.class
+
 Project A_Spec.pdf
 q1.txt
 q2.txt
