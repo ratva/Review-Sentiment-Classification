@@ -51,7 +51,7 @@ def create_word_list(tokens):
                 word_count_dict[word] += 1
             else:
                 word_count_dict[word] = 1
-    
+
     return word_count_dict
 
 #Finally makes dictionary for modeling.
