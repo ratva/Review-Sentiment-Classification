@@ -1,3 +1,11 @@
+L - Set up 7 folds for validation and test - cross validation
+
+A - logistic reg and build up hyperparameter grid to asssess
+
+Look into sklearn BoW tools
+
+L2 penalties (C equiv to alpha )
+
 https://www.nltk.org/book_1ed/ch05.html - 
 >>> text = nltk.word_tokenize("And now for something completely different")
 >>> nltk.pos_tag(text)
